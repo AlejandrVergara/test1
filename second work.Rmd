@@ -13,9 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## 1
 
-```         
 After making the pertinent connections with Github, there will be the DESCRIPTION file and we proceed to fill in the required spaces, in this case it is filled like this:
-```
 
 Package: test1
 
@@ -162,9 +160,7 @@ print(kable(Data_2[1:15, c(1, 14, 13, 9)],
             align = "c"))}
 ```
 
-```         
 Here it is evident how by putting SYA(1) it extracts what was done in exercise 1 with a short explanation
-```
 
 ```{r}
 library("test1")
