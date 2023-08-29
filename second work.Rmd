@@ -1,0 +1,172 @@
+---
+title: "second Task"
+author: "Alejandro Vergara Rincon 81190"
+date: "2023-08-29"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1
+
+```         
+After making the pertinent connections with Github, there will be the DESCRIPTION file and we proceed to fill in the required spaces, in this case it is filled like this:
+```
+
+Package: test1
+
+Type: Package
+
+Title: Package for task 2 development.
+
+Version: 0.1.0
+
+Author: Jose Alejandro Vergara 81190 Maintainer:
+
+The package maintainer [Josea.vergararar\@ecci.edu.co](mailto:Josea.vergararar@ecci.edu.co){.email}
+
+Description: This code is used to solve the data transformation exercises:<https://r4ds.had.co.nz/transform.html#transform>
+
+License: "use_mit_license"
+
+Encoding: UTF-8
+
+LazyData: true
+
+Imports: dplyr, tidyr, knitr
+
+RoxygenNote: 7.2.3
+
+## 2
+
+```{r}
+SYA <- function(x) {
+  library(nycflights13)
+  library(tidyverse)
+  library(knitr)
+  if (x == 1) {
+    return(Ex1())
+  } else if (x == 2) {
+    return(Ex2())
+  } else if (x == 3) {
+    return(Ex3())}
+  else if (x == 4) {
+  return(Ex4())}
+  else if (x == 5) {
+    return(Ex5())}
+  else if (x == 6) {
+    return(Ex6())}
+  else {
+
+    print("It is not possible to perform this operation")
+  }
+}
+```
+
+This code defines an R function named **`SYA`** (search_your_asnwer). This function takes a single argument **`x`**, which is used to determine which specific task or operation to perform. Let's break down the code step by step:
+
+1.  **Loading Libraries**: The function starts by loading several R packages: **`nycflights13`**, **`tidyverse`**, and **`knitr`**. These packages provide various functions and tools for data manipulation, analysis, and visualization.
+
+2.  **Conditional Execution**: The function uses a series of **`if`** and **`else if`** statements to determine what action to take based on the value of the input **`x`**.
+
+    -   If **`x`** is equal to 1, the function will return the result of the **`Ex1()`** function.
+
+    -   If **`x`** is equal to 2, the function will return the result of the **`Ex2()`** function.
+
+    -   If **`x`** is equal to 3, the function will return the result of the **`Ex3()`** function.
+
+    -   If **`x`** is equal to 4, the function will return the result of the **`Ex4()`** function.
+
+    -   If **`x`** is equal to 5, the function will return the result of the **`Ex5()`** function.
+
+    -   If **`x`** is equal to 6, the function will return the result of the **`Ex6()`** function.
+
+    -   If none of the above conditions are met, a message "It is not possible to perform this operation" will be printed.
+
+3.  **Function Execution**: The function will execute the specified sub-function (e.g., **`Ex1()`**, **`Ex2()`**, etc.) based on the value of **`x`** that was passed as an argument. Each **`Ex1`**, **`Ex2, etc.`** corresponds to applying the solutions developed in the previous task, therefore the solution code for each one is identical to the solution in the first assignment.
+
+    ## Example
+
+```{r echo=FALSE}
+Ex1 <- function(x){
+
+library(nycflights13)
+library(tidyverse)
+  library(knitr)
+exercise <- nycflights13::flights
+
+Data_1 <- filter(exercise, arr_delay >= "2")
+Data_2 <- filter(exercise, dest == "IAH" | dest == "HOU")
+cat("\n")
+cat("5.2.4 Exercises:")
+cat("\n")
+cat("1\n")
+
+cat("#The first step is to load the nycflights13 and tidyverse libraries:\n")
+
+cat("\n")
+cat("\n")
+
+cat("library(nycflights13)\n")
+cat("library(tidyverse)\n")
+cat("library(knitr)\n")
+
+cat("\n")
+cat("\n")
+cat(
+"#Then the flight data is assigned to a called variable,
+ prin this case the variable exercise This allows you to use the variable exercise to reference
+ the data in the code:\n")
+
+cat("\n")
+cat("\n")
+
+cat("exercise <- nycflights13::flights\n")
+
+cat("\n")
+cat("\n")
+
+cat("Data_1 <- filter(exercise, arr_delay >= 2)\n")
+cat("\n")
+cat("\n")
+cat(
+"#A new dataset named Data_1 is created by using the filter() function,
+which is part of the dplyr package within tidyverse. This function allows you to filter
+the data according to a given condition.\n")
+cat("\n")
+cat("\n")
+
+print(kable(Data_1[1:10, c(1, 14, 13, 9)],
+            caption = "In this table, you can see information about the flights.",
+            align = "c"))
+cat("\n")
+cat("2\n")
+
+
+cat("Data_2 <- filter(exercise, dest == \"IAH\" | dest == \"HOU\")\n")
+
+cat("\n")
+
+cat(
+"# In this code, we use the OR operator (\\|) to filter out flights that are bound for Houston,
+either IAH or HOU. The condition dest == \"IAH\" \\| dest == \"HOU\" ensures that flights that meet
+either of these two options are included.\n\n")
+cat("\n")
+
+print(kable(Data_2[1:15, c(1, 14, 13, 9)],
+            caption = "In this table, you can see information about the flights and destinations.",
+            align = "c"))}
+```
+
+```         
+Here it is evident how by putting SYA(1) it extracts what was done in exercise 1 with a short explanation
+```
+
+```{r}
+library("test1")
+SYA(1)
+```
